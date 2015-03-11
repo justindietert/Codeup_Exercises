@@ -14,10 +14,12 @@ do {
 
     if (!is_numeric($start) || !is_numeric($end) || !is_numeric($incr)) {
         fwrite(STDOUT, "Enter numerals only.\n");
+    } elseif ($start > $end) {
+        fwrite(STDOUT, "Starting number must be less than ending number.\n");
     } else {
         for ($i = $start; $i <= $end; $i += $incr) {
             echo "$i\n";
         }
     }
 
-} while (!is_numeric($start) || !is_numeric($end) || !is_numeric($incr));
+} while (!is_numeric($start) || !is_numeric($end) || !is_numeric($incr) || $start > $end);
