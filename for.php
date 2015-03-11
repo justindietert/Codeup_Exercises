@@ -5,13 +5,19 @@ do {
     $start = trim(fgets(STDIN));
     fwrite(STDOUT, "Ending number: ");
     $end = trim(fgets(STDIN));
+    fwrite(STDOUT, "Choose increment: ");
+    $incr = trim(fgets(STDIN));
 
-    if (!is_numeric($start) || !is_numeric($end)) {
-        fwrite(STDOUT, "Enter numerals only. ");
+    if ($incr == '') {
+        $incr = 1;
+    }
+
+    if (!is_numeric($start) || !is_numeric($end) || !is_numeric($incr)) {
+        fwrite(STDOUT, "Enter numerals only.\n");
     } else {
-        for ($i = $start; $i <= $end; $i++) {
+        for ($i = $start; $i <= $end; $i += $incr) {
             echo "$i\n";
         }
     }
 
-} while (!is_numeric($start) || !is_numeric($end));
+} while (!is_numeric($start) || !is_numeric($end) || !is_numeric($incr));
