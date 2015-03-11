@@ -28,4 +28,15 @@ foreach ($things as $key => $thing) {
     }
 }
 
+echo "\n\n==== Every Value ====\n\n";
+
+foreach ($things as $key => $thing) {
+    if (is_array($thing)) {
+        $array = implode(", ", $thing);
+        echo "Array($array)\n";
+    } else {
+        echo "$thing\n";
+    }
+}
+
 echo "\n\n";
