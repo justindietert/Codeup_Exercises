@@ -22,3 +22,31 @@ $books = array(
         'pages' => 544
     )
 );
+
+echo "\n======= All Books =======\n\n";
+
+foreach($books as $key => $book) {
+    echo $key . PHP_EOL . PHP_EOL; 
+
+    foreach($book as $key2 => $bookInfo) {
+        echo "$key2: $bookInfo" . PHP_EOL;
+    }
+
+    echo "\n----------------\n\n";
+}
+
+echo "\n======= Published after 1950 =======\n\n";
+
+foreach($books as $key => $book) {
+    if ($book['published'] > 1950) {
+        echo $key . PHP_EOL . PHP_EOL; 
+
+        foreach($book as $key2 => $bookInfo) {
+            echo "$key2: $bookInfo" . PHP_EOL;
+        }
+
+        echo "\n----------------\n\n";
+    }
+}
+
+
