@@ -4,7 +4,7 @@ $null = null;
 $blankString = '';
 $array = array(1, 2, 3);
 $emptyArray = [];
-$arrayWithKeyAndValueSetToBlank = ['key' => ''];
+$arrayWithKeyButValueSetToBlank = ['key' => ''];
 
 // Create a function that checks if a variable is set or empty, and display "$variable_name is SET|EMPTY"
 function setOrEmpty($x, $var_name) {
@@ -26,7 +26,7 @@ function setOrEmpty($x, $var_name) {
 echo PHP_EOL . setOrEmpty($null, '$null') . PHP_EOL . PHP_EOL;
 echo setOrEmpty($blankString, '$blankString') . PHP_EOL . PHP_EOL;
 echo setOrEmpty($emptyArray, '$emptyArray') . PHP_EOL . PHP_EOL;
-echo setOrEmpty($arrayWithKeyAndValueSetToBlank, '$arrayWithKeyAndValueSetToBlank') . PHP_EOL . PHP_EOL;
+echo setOrEmpty($arrayWithKeyButValueSetToBlank, '$arrayWithKeyButValueSetToBlank') . PHP_EOL . PHP_EOL;
 
 // TEST: If var $nothing is set, display '$nothing is SET'
 
