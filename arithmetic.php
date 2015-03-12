@@ -4,23 +4,43 @@ $a = 100; // These variables are not accessible inside the functions below.
 $b = 200; //
 
 function add($a, $b) {
-    echo $a + $b . PHP_EOL;
+    if (is_numeric($a) && is_numeric($b)) {
+        echo $a + $b . PHP_EOL;
+    } else {
+        echo "Both arguments must be numbers.\n";
+    }
 }
 
 function subtract($a, $b) {
-    echo $a - $b . PHP_EOL;
+    if (is_numeric($a) && is_numeric($b)) {
+        echo $a - $b . PHP_EOL;
+    } else {
+        echo "Both arguments must be numbers.\n";
+    }
 }
 
 function multiply($a, $b) {
-    echo $a * $b . PHP_EOL;
+    if (is_numeric($a) && is_numeric($b)) {
+        echo $a * $b . PHP_EOL;
+    } else {
+        echo "Both arguments must be numbers.\n";
+    }
 }
 
 function divide($a, $b) {
-    echo $a / $b . PHP_EOL;
+    if (is_numeric($a) && is_numeric($b)) {
+        echo $a / $b . PHP_EOL;
+    } else {
+        echo "Both arguments must be numbers.\n";
+    }
 }
 
 function modulus($a, $b) {
-    echo $a % $b . PHP_EOL;
+    if (is_numeric($a) && is_numeric($b)) {
+        echo $a % $b . PHP_EOL;
+    } else {
+        echo "Both arguments must be numbers.\n";
+    }
 }
 
 add(1, 2);
