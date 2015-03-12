@@ -1,81 +1,112 @@
 <?php
 
-$a = 100; // These variables are not accessible inside the functions below.
-$b = 200; //
-
 function add($a, $b) {
-    if (is_numeric($a) && is_numeric($b) && $b !== 0 && !is_string($a) && !is_string($b)) {
-        echo $a + $b . PHP_EOL;
-    } 
 
-    if (!is_numeric($a) || !is_numeric($b) || is_string($a) || is_string($b)) {
-        errorMessageNum($a, $b);
+    if (isNotNumber($a)) {
+        return errorNotNum($a);
     }
+
+    if (isNotNumber($b)) {
+        return errorNotNum($b);
+    }
+
+    return $a + $b; 
 }
+
+//------------------------------------//
 
 function subtract($a, $b) {
-    if (is_numeric($a) && is_numeric($b) && $b !== 0 && !is_string($a) && !is_string($b)) {
-        echo $a - $b . PHP_EOL;
-    } 
 
-    if (!is_numeric($a) || !is_numeric($b) || is_string($a) || is_string($b)) {
-        errorMessageNum($a, $b);
+    if (isNotNumber($a)) {
+        return errorNotNum($a);
     }
+
+    if (isNotNumber($b)) {
+        return errorNotNum($b);
+    }
+
+    return $a - $b; 
 }
+
+//------------------------------------//
 
 function multiply($a, $b) {
-    if (is_numeric($a) && is_numeric($b) && $b !== 0 && !is_string($a) && !is_string($b)) {
-        echo $a * $b . PHP_EOL;
-    } 
 
-    if (!is_numeric($a) || !is_numeric($b) || is_string($a) || is_string($b)) {
-        errorMessageNum($a, $b);
+    if (isNotNumber($a)) {
+        return errorNotNum($a);
     }
+
+    if (isNotNumber($b)) {
+        return errorNotNum($b);
+    }
+
+    return $a * $b; 
 }
+
+//------------------------------------//
 
 function divide($a, $b) {
-    if (is_numeric($a) && is_numeric($b) && $b !== 0 && !is_string($a) && !is_string($b)) {
-        echo $a / $b . PHP_EOL;
-    } 
 
-    if (!is_numeric($a) || !is_numeric($b) || is_string($a) || is_string($b)) {
-        errorMessageNum($a, $b);
+    if (isNotNumber($a)) {
+        return errorNotNum($a);
     }
 
-    if($b === 0){
-        errorMessageZero($b);
+    if (isNotNumber($b)) {
+        return errorNotNum($b);
+    }
+
+    if (isNotZero($b)) {
+        return $a / $b; 
+    } else {
+        return errorZero();
     }
 }
+
+//------------------------------------//
 
 function modulus($a, $b) {
-    if (is_numeric($a) && is_numeric($b) && $b !== 0 && !is_string($a) && !is_string($b)) {
-        echo $a % $b . PHP_EOL;
-    } 
 
-    if (!is_numeric($a) || !is_numeric($b) || is_string($a) || is_string($b)) {
-        errorMessageNum($a, $b);
+    if (isNotNumber($a)) {
+        return errorNotNum($a);
     }
 
-    if($b === 0){
-        errorMessageZero($b);
+    if (isNotNumber($b)) {
+        return errorNotNum($b);
+    }
+
+    if (isNotZero($b)) {
+        return $a % $b; 
+    } else {
+        return errorZero();
     }
 }
 
-function errorMessageNum($x, $y) {
-    echo "Both arguments, '$x' and '$y', must be numbers. Do not pass a number as a string.\n";
+//------------------------------------//
+
+function isNotZero($x) {
+    return $x != 0 ? true : false;
 }
 
-function errorMessageZero($y) {
-    echo "Cannot divide by $y.\n";
+function isNotNumber($x) {
+    return !is_numeric($x) ? true : false;
 }
 
+function errorNotNum($x) {
+    return "Cannot perform operation on user entry '$x' (not numeric).";
+}
 
-add(1, 2);
+function errorZero() {
+    return "Cannot divide by zero.";
+}
 
-subtract(3, 4);
+//------------------------------------//
 
-multiply(5, 6);
+echo add(1, 2) . PHP_EOL;
 
-divide('7', 0);
+echo subtract(3, 4) . PHP_EOL;
 
-modulus(20, 0);
+echo multiply(5, 6) . PHP_EOL;
+
+echo divide('7', 0) . PHP_EOL;
+
+echo modulus('f', 0) . PHP_EOL;
