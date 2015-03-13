@@ -10,14 +10,14 @@ $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 function searchFor($query, $array) {
     $result = array_search($query, $array);
 
-    if ($result || $result == $array[0]) {
+    if (is_numeric($result)) {
         return true;
     } else {
         return false;
     }
 }
 
-echo searchFor('Tina', $names) . PHP_EOL . PHP_EOL;
+echo searchFor('Bob', $names) . PHP_EOL . PHP_EOL;
 
 //------------------------------------------------------------
 
