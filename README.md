@@ -2,5 +2,5 @@
 
 A personal repo for server-side exercises I've completed during my amazing time at Codeup!
 
-## Languages
+## Language Used
 - PHP
