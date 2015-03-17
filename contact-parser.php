@@ -21,7 +21,7 @@ function parseContacts($filename)
 
     foreach($newArray as $innerArray) {
         $contactListing = array_combine($indexName, $innerArray);
-        $contactListing["number"] = substr($contactListing["number"], 0, 3) . '-' . substr($contactListing["number"], 3, 3) . '-' . substr($contactListing["number"], 6, 4);
+        $contactListing["number"] = formatNumbers($contactListing["number"]);
         $contacts[] = $contactListing;
     }
 
@@ -29,6 +29,9 @@ function parseContacts($filename)
     return $contacts;
 }
 
+function formatNumbers($number) {
+    return substr($number, 0, 3) . '-' . substr($number, 3, 3) . '-' . substr($number, 6, 4);
+}
 
 // function formatNumbers($number) 
 // {
