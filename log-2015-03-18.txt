@@ -1,0 +1,6 @@
+2015-03-18 05:08:37pm [INFO]This is an info message.
+2015-03-18 05:08:37pm [ERROR]This is an error message.
+2015-03-18 05:09:13pm [INFO] This is an info message.
+2015-03-18 05:09:13pm [ERROR] This is an error message.
+2015-03-18 05:17:22pm [INFO] This is an informative message.
+2015-03-18 05:17:22pm [ERROR] This here be an error.
