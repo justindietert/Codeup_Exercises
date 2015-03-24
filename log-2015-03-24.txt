@@ -1,0 +1,8 @@
+2015-03-24 08:35:15pm INFO Hi, this is info.
+2015-03-24 08:35:15pm ERROR Hello, this is an error.
+2015-03-24 08:37:52pm INFO Hi, this is info.
+2015-03-24 08:37:52pm ERROR Hello, this is an error.
+2015-03-24 08:47:38pm INFO Hi, info.
+2015-03-24 08:47:38pm ERROR Hello, error.
+2015-03-24 09:08:29pm INFO Hi, info.
+2015-03-24 09:08:29pm ERROR Hello, error.

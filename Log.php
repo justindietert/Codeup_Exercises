@@ -2,12 +2,12 @@
 
 class Log 
 {
-    public $filename = "log-" . date("Y-m-d") . ".txt";
+    public $filename = '';
 
     public function logMessage($logLevel, $message)
     {
         $handle = fopen($this->filename, 'a');
-        $string = date("Y-m-d") . " " . date("h:i:sa") . " " . "[$logLevel] " . $message . PHP_EOL;
+        $string = date("Y-m-d") . " " . date("h:i:sa") . " " . "$logLevel " . $message . PHP_EOL;
 
         fwrite($handle, $string);
 
@@ -16,11 +16,11 @@ class Log
 
     public function logInfo($message)
     {
-        logMessage("INFO", $message);
+        $this->logMessage("INFO", $message);
     }
 
     public function logError($message)
     {
-        logMessage("ERROR", $message);
+        $this->logMessage("ERROR", $message);
     }
 }
