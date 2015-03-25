@@ -7,10 +7,9 @@ class Log
     public function logMessage($logLevel, $message)
     {
         $handle = fopen($this->filename, 'a');
-        $string = date("Y-m-d") . " " . date("h:i:sa") . " " . "$logLevel " . $message . PHP_EOL;
-
+        $dateStamp = date("Y/m/d H:i:s");
+        $string = "$dateStamp " . "$logLevel " . $message . PHP_EOL;
         fwrite($handle, $string);
-
         fclose($handle);
     }
 
