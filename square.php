@@ -1,9 +1,11 @@
 <?php
 
+require_once 'rectangle.php';
+
 class Square extends Rectangle 
 {
     public function perimeter()
     {
-        return $perimeter = ($this->width)*2 + ($this->height)*2;
+        return $this->width * 4;
     }
 }

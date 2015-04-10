@@ -13,7 +13,7 @@ class Rectangle
 
     public function area()
     {
-        return $area = $this->width * $this->height;
+        return $this->width * $this->height;
     }
 
 }
