@@ -2,6 +2,6 @@
 
 require_once 'Log.php';
 
-$myLog = new Log('cli');
+$myLog = new Log(false);
 $myLog->logInfo('Hi, info.');
 $myLog->logError('Hello, error.');
