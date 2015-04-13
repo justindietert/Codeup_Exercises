@@ -3,7 +3,7 @@
 require_once 'rectangle.php';
 require_once 'square.php';
 
-$rect = new Rectangle(3, 4);
+$rect = new Rectangle(5, 4);
 
 echo $rect->area() . PHP_EOL;
 echo $rect->perimeter() . PHP_EOL;
